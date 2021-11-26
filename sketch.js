@@ -83,6 +83,7 @@ function draw() {
   if(keyDown("space") && trex.isTouching(ground) && touches.lenght>0) {
     trex.velocityY = -13;
     jump.play()
+    touches=[]
   }
   trex.velocityY = trex.velocityY + 0.8
   if (ground.x < 0){
