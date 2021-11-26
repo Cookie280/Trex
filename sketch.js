@@ -80,7 +80,7 @@ function draw() {
     score += Math.round(frameCount/500)
   text("Pontuação:"+score,50,50)
   // pulando o trex ao pressionar a tecla de espaço
-  if(keyDown("space")&& trex.isTouching(ground)) {
+  if(keyDown("space") && trex.isTouching(ground) && touches.lenght>0) {
     trex.velocityY = -13;
     jump.play()
   }
