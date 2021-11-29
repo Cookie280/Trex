@@ -47,10 +47,14 @@ function setup() {
   reiniciar = createSprite(300,100,20,20);
   reiniciar.addImage("restart",restart);
   reiniciar.scale = 0.7;
+  reiniciar.x=width/2*0.7
+  reiniciar.y=height/2*0.7
   
   jogoAcabou = createSprite(300,50,20,20);
   jogoAcabou.addImage("gameOver",gameOver);
   jogoAcabou.scale = 0.5;
+  jogoAcabaou.x=width/2*0.5
+  jogoAcabou.y=height/2*0.5
 
   //crie sprite ground (solo)
   ground = createSprite(200,height*0.9,400,20);
