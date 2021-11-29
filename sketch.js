@@ -44,17 +44,13 @@ function setup() {
   trex.addAnimation("collided",trex_collided);
   trex.scale = 0.5;
 
-  reiniciar = createSprite(300,100,20,20);
+  reiniciar = createSprite(windowWidth/2,windowHeight/2-50,20,20);
   reiniciar.addImage("restart",restart);
   reiniciar.scale = 0.7;
-  reiniciar.x=width/2*0.7
-  reiniciar.y=height/2*0.7
-  
-  jogoAcabou = createSprite(300,50,20,20);
+
+  jogoAcabou = createSprite(windowWidth/2,windowHeight/2,20,20);
   jogoAcabou.addImage("gameOver",gameOver);
   jogoAcabou.scale = 0.5;
-  jogoAcabaou.x=width/2*0.5
-  jogoAcabou.y=height/2*0.5
 
   //crie sprite ground (solo)
   ground = createSprite(200,height*0.9,400,20);
@@ -75,6 +71,8 @@ function draw() {
   //definir cor do plano de fundo
   background(180);
 
+  console.log(trex.y)
+
   if(estadoJogo === JOGANDO){
     jogoAcabou.visible = false;
     reiniciar.visible = false;
@@ -84,7 +82,7 @@ function draw() {
     score += Math.round(frameCount/500)
   text("Pontuação:"+score,50,50)
   // pulando o trex ao pressionar a tecla de espaço
-  if(keyDown("space") && trex.y>160 && touches.lenght>0) {
+  if(keyDown("space") || touches.lenght>0) {
     trex.velocityY = -13;
     jump.play()
     touches=[]
